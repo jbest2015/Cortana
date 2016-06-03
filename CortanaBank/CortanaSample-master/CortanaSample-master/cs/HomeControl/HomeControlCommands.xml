@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="HomeControlCommandSet_en-us">
+    <CommandPrefix>credit union</CommandPrefix>
+    <Example>Check Balance, History and others</Example>
+
+    <Command Name="History">
+      <Example>Check my History</Example>
+      <ListenFor>check [my] [current] {accounts} account history</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">what is my {accounts} account history</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">what is my {builtin:AppName} {accounts} account history</ListenFor>
+      <Feedback>retrieving history</Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="Budget">
+      <Example>Check my spending budget</Example>
+      <ListenFor>what is [my] spending budget</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">what is my spending budget</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">what is my {builtin:AppName} spending budget</ListenFor>
+      <Feedback>retrieving your spending budget</Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="Loan">
+      <Example>I would like to start a loan</Example>
+      <ListenFor>[I] would [like] to start a loan</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">[I] would [like] to start a loan</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[I] would [like] to start a {builtin:AppName} loan</ListenFor>
+      <Feedback>Creating your loan application</Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="VideoCall">
+      <Example>Please call me</Example>
+      <ListenFor> [Please] call [me]</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">Please call [me]</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[Please] have [the] {builtin:AppName} call [me]</ListenFor>
+      <Feedback>Connecting you to an agent now</Feedback>
+      <Navigate />
+    </Command>
+
+    <!--<Command Name="Transfers">
+      <Example>Transfer of one hundred dollars from my checking account to my savings account</Example>
+      <ListenFor>transfer {amounts} from [my] {srcaccounts} account to [my] {dstaccounts} account</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">transfer {amounts} from my {srcaccounts} account to my {dstaccounts} account</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">transfer {amounts} from my {builtin:AppName} {srcaccounts} account to my {dstaccounts} account</ListenFor>
+      <Feedback>Making Transfer</Feedback>
+      <VoiceCommandService Target="VoiceCommandService" />
+    </Command>-->
+
+    <!--<Command Name="Transfers">
+      <Example>Transfer of one hundred dollars from my checking account to my savings account</Example>
+      <ListenFor>transfer {amounts} [from] [my] {accounts} account</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">transfer {amounts} [from] [my] {accounts} account </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">transfer {amounts} [from] [my] {builtin:AppName} {accounts} account</ListenFor>
+      <Feedback>Making Transfer</Feedback>
+      <VoiceCommandService Target="VoiceCommandService" />
+    </Command>-->
+
+    <Command Name="Transfers">
+      <Example>Transfer Money</Example>
+      <ListenFor>Transfer Money </ListenFor>
+      <ListenFor>Transfer {amounts}</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">transfer Money </ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">Transfer {amounts} </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">transfer {builtin:AppName} money </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">transfer {builtin:AppName} {amounts} </ListenFor>
+      <Feedback>Starting Transfer</Feedback>
+      <VoiceCommandService Target="VoiceCommandService" />
+    </Command>
+
+    <Command Name="Helpme">
+      <Example>Credit Union help</Example>
+      <ListenFor>Help [me] with [my] {builtin:AppName}  </ListenFor>
+      <ListenFor>Help [me] with bank control  </ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">Help [me] with [my] {builtin:AppName}</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">{builtin:AppName} Help me</ListenFor>
+      <Feedback>Getting Help</Feedback>
+      <VoiceCommandService Target="VoiceCommandService" />
+    </Command>
+
+    <Command Name="CheckBalance">
+      <Example>Check my balance</Example>
+      <ListenFor>check [my] [current] {accounts} account balance</ListenFor>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">what is my {accounts} account balance</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">what is my {builtin:AppName} {accounts} account balance</ListenFor>
+      <Feedback>Checking balance</Feedback>
+      <VoiceCommandService Target="VoiceCommandService" />
+    </Command>
+    
+    
+    <PhraseList Label="accounts">
+      <Item>checking</Item>
+      <Item>savings</Item>
+      <Item>mortgage</Item>
+      <Item>Auto</Item>
+      <Item>Car</Item>
+      <Item>Auto Loan</Item>
+      <Item>car Loan</Item>
+      <Item>Credit Card</Item>
+      <Item>Home Equity</Item>
+      <Item>Vacation</Item>
+    </PhraseList>
+
+    <!--<PhraseList Label="srcaccounts">
+      <Item>checking</Item>
+      <Item>savings</Item>
+      <Item>mortgage</Item>
+      <Item>Auto</Item>
+      <Item>Car</Item>
+      <Item>Auto Loan</Item>
+      <Item>car Loan</Item>
+      <Item>Credit Card</Item>
+      <Item>Home Equity</Item>
+      <Item>Vacation</Item>
+    </PhraseList>-->
+
+    <!--<PhraseList Label="dstaccounts">
+      <Item>checking</Item>
+      <Item>savings</Item>
+      <Item>mortgage</Item>
+      <Item>Auto</Item>
+      <Item>Car</Item>
+      <Item>Auto Loan</Item>
+      <Item>car Loan</Item>
+      <Item>Credit Card</Item>
+      <Item>Home Equity</Item>
+      <Item>Vacation</Item>
+    </PhraseList>-->
+
+
+    <PhraseTopic Label="amounts" Scenario="Natural Language">
+      <Subject>Phone Number</Subject>
+    </PhraseTopic>
+
+   
+  </CommandSet>
+</VoiceCommands>
